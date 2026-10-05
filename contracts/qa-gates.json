@@ -1,0 +1,133 @@
+{
+  "schema_version": 2,
+  "status": "REQUIREMENTS_NOT_TEST_RESULTS",
+  "owner_review": {
+    "required_acceptance_ids": [
+      "ORG-01",
+      "ENG-01",
+      "ENG-02",
+      "DRV-01",
+      "DRV-02",
+      "DRV-03",
+      "DRV-04",
+      "SCO-01",
+      "SCO-02",
+      "CAR-01",
+      "CAR-02",
+      "WLD-01",
+      "WLD-02",
+      "EVT-01",
+      "EVT-02",
+      "EVT-03",
+      "GAR-01",
+      "GAR-02",
+      "VIS-01",
+      "VIS-02",
+      "VIS-03",
+      "VIS-04",
+      "VIS-05",
+      "CAM-01",
+      "INP-01",
+      "UX-01",
+      "UX-02",
+      "AUD-01",
+      "AUD-02",
+      "GHO-01",
+      "REP-01",
+      "SAV-01",
+      "SAV-02",
+      "SAV-03",
+      "PER-01",
+      "PER-02",
+      "PER-03",
+      "PER-04",
+      "BRW-01",
+      "BRW-02",
+      "SDK-01",
+      "SDK-02",
+      "SDK-03",
+      "SDK-04",
+      "SDK-05",
+      "AST-01",
+      "AST-02",
+      "REL-01",
+      "REL-03",
+      "ORG-02",
+      "ORG-03",
+      "OWN-01",
+      "OWN-02",
+      "OWN-03",
+      "OWN-04",
+      "OWN-05",
+      "OWN-06",
+      "QA-01",
+      "QA-02",
+      "QA-03",
+      "QA-04"
+    ],
+    "candidate_target": "owner-review",
+    "clean_core_regression_runs_min": 2,
+    "open_defects_max": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 0
+    },
+    "department_reviewers": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "final_agent_authority": "A0",
+    "missing_required_checks_block": true,
+    "owner_personal_acceptance_required_before_this_gate": false
+  },
+  "submission_ready": {
+    "poki": {
+      "requires_owner_ready": true,
+      "additional_acceptance_ids": [
+        "UX-03",
+        "REL-02",
+        "REL-05",
+        "POR-01"
+      ],
+      "actual_owner_authorization_required": true
+    },
+    "crazygames-basic": {
+      "requires_owner_ready": true,
+      "additional_acceptance_ids": [
+        "UX-03",
+        "REL-02",
+        "REL-05",
+        "POR-02"
+      ],
+      "actual_owner_authorization_required": true
+    },
+    "crazygames-full": {
+      "requires_owner_ready": true,
+      "additional_acceptance_ids": [
+        "UX-03",
+        "REL-02",
+        "REL-05",
+        "POR-03"
+      ],
+      "actual_owner_authorization_required": true
+    }
+  },
+  "publication": {
+    "requires_named_target_submission_readiness": true,
+    "additional_acceptance_ids": [
+      "REL-04"
+    ],
+    "explicit_public_action_authorization_required": true
+  },
+  "later_external_ids": [
+    "POR-01",
+    "POR-02",
+    "POR-03",
+    "REL-02",
+    "REL-04",
+    "REL-05",
+    "UX-03"
+  ],
+  "anti_tampering": "Owner-approved change record required to remove/relax mandatory scope; parser checks are not proof of authentic execution."
+}

@@ -1,0 +1,5 @@
+LATERAL: AFTER HOURS includes Three.js 0.186.1 (MIT) and Rapier3D 0.21.0 (Apache-2.0).
+Their unmodified license texts are included beside this notice.
+Original game code and authored assets are created for this project. Third-party game models, brands, recordings, music and fonts are not included in the G1 build, with the exception of the three self-hosted OFL 1.1 UI typefaces below.
+The title and fictional vehicle names are working names; public commercial clearance is pending.
+UI typefaces (SIL Open Font License 1.1, license texts in this folder): Big Shoulders Display and Big Shoulders Stencil Display (Big Shoulders Project Authors), Chakra Petch (The Chakra Petch Project Authors). Distributed unmodified as latin-subset WOFF2 via Fontsource.

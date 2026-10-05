@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>LATERAL admin</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header>
+  <h1>LATERAL admin</h1>
+  <div id="stats" class="stats" aria-live="polite"></div>
+</header>
+<div id="banner" class="banner" hidden></div>
+<main>
+  <section class="card" id="send">
+    <h2>Send a gift</h2>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" data-mode="name" aria-selected="true">Driver name</button>
+      <button type="button" role="tab" data-mode="email" aria-selected="false">Email address</button>
+      <button type="button" role="tab" data-mode="link" aria-selected="false">Make a link</button>
+    </div>
+    <form id="giftForm" autocomplete="off">
+      <label class="field" id="fName"><span>Driver name</span><input id="to" maxlength="16" placeholder="nordbo_fan" spellcheck="false"></label>
+      <label class="field" id="fEmail" hidden><span>Email address</span><input id="email" type="email" maxlength="254" placeholder="friend@example.com" spellcheck="false"></label>
+      <div class="row">
+        <label class="field"><span>Marks</span><input id="marks" type="number" min="0" max="100000" step="1" value="500"></label>
+        <label class="field"><span>Expires</span>
+          <select id="expiry"><option value="">Never</option><option value="1">1 day</option><option value="7">7 days</option><option value="30" selected>30 days</option><option value="90">90 days</option></select>
+        </label>
+        <label class="field" id="fMax" hidden><span>People who can open it</span><input id="maxClaims" type="number" min="1" max="100000" value="1"></label>
+      </div>
+      <div class="field">
+        <span>Items (optional)</span>
+        <input id="itemSearch" type="search" placeholder="Search the shop" spellcheck="false">
+        <div id="itemList" class="items" role="listbox" aria-label="Shop items"></div>
+        <div id="picked" class="chips"></div>
+      </div>
+      <label class="field"><span>Message <em id="count">0 / 140</em></span><textarea id="message" maxlength="140" rows="2" placeholder="Thanks for testing!"></textarea></label>
+      <div class="preview" id="preview" aria-live="polite"></div>
+      <button class="primary" id="sendBtn" type="submit">Send</button>
+    </form>
+    <div id="confirm" class="confirm" hidden>
+      <p id="confirmText"></p>
+      <div class="row"><button type="button" class="primary" id="confirmYes">Yes, send it</button><button type="button" id="confirmNo">Cancel</button></div>
+    </div>
+    <div id="result" class="result" hidden></div>
+  </section>
+
+  <section class="card" id="recent">
+    <h2>Recent gifts</h2>
+    <div class="scroll"><table id="giftTable"><thead><tr><th>When</th><th>To</th><th>What</th><th>Status</th><th>Opened by</th><th></th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="card" id="lookup">
+    <h2>Accounts</h2>
+    <form id="lookupForm" class="row" autocomplete="off"><input id="q" placeholder="Search by driver name" spellcheck="false"><button type="submit">Search</button></form>
+    <div class="scroll"><table id="accTable"><thead><tr><th>Name</th><th>Last seen</th><th>Flags</th><th></th></tr></thead><tbody></tbody></table></div>
+    <div id="ledgerBox" hidden>
+      <h3 id="ledgerTitle"></h3>
+      <div class="scroll"><table id="ledgerTable"><thead><tr><th>When</th><th>Kind</th><th class="num">Marks</th><th>Reference</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <section class="card" id="flagsCard" hidden>
+    <h2>Review log</h2>
+    <p class="muted">Wallet writes the server refused as suspicious.</p>
+    <div class="scroll"><table id="flagTable"><thead><tr><th>When</th><th>Account</th><th>Kind</th><th>Detail</th></tr></thead><tbody></tbody></table></div>
+  </section>
+</main>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

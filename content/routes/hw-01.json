@@ -1,0 +1,25 @@
+{
+  "id": "HW-01",
+  "name": "Foundry Eight",
+  "district": "harbor",
+  "version": "1.0.3",
+  "widthM": 13.5,
+  "closed": true,
+  "roadId": "road:harbor:hw01",
+  "clippingZones": [
+    {
+      "id": "HW01-CLIP-WEST-01",
+      "progressM": 107,
+      "radiusM": 6,
+      "preferredOffsetM": 3.8,
+      "lateralToleranceM": 0.7,
+      "bonusFactor": 1.2
+    }
+  ],
+  "controlPoints": [
+    [0, 4.8, -1], [38, 4.8, -28], [88, 4.5, -46], [132, 3.4, -28],
+    [146, 1.7, 10], [120, 0.4, 45], [70, 0, 57], [18, 0, 40],
+    [-12, 0, 12], [-48, 0, 38], [-96, 0, 48], [-137, 0.4, 23],
+    [-143, 1.7, -15], [-112, 3.4, -47], [-62, 4.5, -61], [-20, 4.8, -38]
+  ]
+}

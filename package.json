@@ -1,0 +1,41 @@
+{
+  "name": "lateral-after-hours",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests",
+    "test": "vitest run",
+    "test:owner": "node tools/release/build-targets.mjs .release-check && L6_E2E_ARTIFACT_ROOT=.release-check node tests/e2e/owner-review.mjs",
+    "test:release-strip": "node tools/release/build-targets.mjs .release-check",
+    "qa:owner-ready": "python3 tools/check_owner_ready.py --manifest evidence/owner-ready.json --root .",
+    "build:targets": "node tools/release/build-targets.mjs",
+    "build": "npm run build:owner-review",
+    "build:owner-review": "vite build --mode owner-review",
+    "build:standalone": "vite build --mode standalone",
+    "build:poki": "vite build --mode poki",
+    "build:selfhost": "vite build --mode selfhost",
+    "build:crazygames-basic": "vite build --mode crazygames-basic",
+    "build:crazygames-full": "vite build --mode crazygames-full",
+    "preview:owner": "node tools/preview_build.mjs --dir dist/owner-review",
+    "play": "node tools/preview_build.mjs --dir dist/owner-review --open"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "0.21.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.3",
+    "@types/three": "0.186.0",
+    "eslint": "10.11.0",
+    "tsx": "4.23.15",
+    "typescript": "6.0.2",
+    "typescript-eslint": "8.71.0",
+    "vite": "8.3.1",
+    "vitest": "5.0.2"
+  }
+}

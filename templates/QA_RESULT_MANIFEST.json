@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "NOT_RUN",
+  "candidate": {
+    "version": null,
+    "build_id": null,
+    "commit": null,
+    "content_hash": null,
+    "target": "owner-review",
+    "artifact": {
+      "path": null,
+      "sha256": null
+    }
+  },
+  "requirements": [],
+  "clean_regression_runs": [],
+  "independent_reviews": [],
+  "open_defects": [],
+  "astra_review": {
+    "agent_id": "A0",
+    "status": "NOT_RUN",
+    "verified_running_build": false,
+    "commit": null,
+    "build_id": null,
+    "evidence": []
+  },
+  "notes": [
+    "EMPTY TEMPLATE. Populate only after actual game execution. The checker is an integrity gate, not a test runner or proof of defect-free software."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "NOT_REQUESTED",
+  "approved_candidate": null,
+  "actual_owner_decision_reference": null,
+  "feedback_items": [],
+  "publication_authorization": {
+    "status": "NOT_AUTHORIZED",
+    "platform": null,
+    "account": null,
+    "build_id": null,
+    "action": null,
+    "decision_reference": null
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "generator": "tools/assets/export-assets.ts",
+  "sourceHashes": {
+    "content/routes/hw-01.json": "089ff1f054abb652f325ee457f42a82f28aec243c6f8fa43eb0587e29c6b3f57",
+    "assets-source/3d/harbor-source.ts": "7d9a6ad97337ac081205401a3a54d6d6c9bc2a40a420a19f8ac92bacfdf42e27",
+    "assets-source/textures/harbor-asphalt.png": "14a0d86b7aeeae9f17a377ae063eddc9fe353cb835aafd5e170345b82ed410c3",
+    "assets-source/textures/harbor-concrete.png": "3278e41c214f7c575f375c7fd668d86c749ae4d01fa7d85b9434651a3f17e1db",
+    "assets-source/textures/harbor-curb.png": "f0260cdebaeb4487771648dc27ad1144f0e01e6a4b87a130cfb490db544a4742",
+    "assets-source/textures/harbor-steel.png": "4e9d115c541e4c3a0548c1bbf737148ff0cf611a9925600ca1e2a6bce618b309",
+    "assets-source/textures/harbor-shed-paint.png": "6c01163b9c13657176075d6aa6002c6f2650ab11ef152078119ffa47d0949bd7",
+    "tools/assets/generate-textures.ts": "ff165c956310524d270d7e7b02a2ce1d963bb56e9672ad1ffa2710c236db4bb9",
+    "src/world/route-data.ts": "6cd0422624456d21b29cfff8f5661556ef703a69ebd2bd8430300547236bf7c2",
+    "src/world/index.ts": "009c151e2d05708b84ba2d28be48bf63ea0f225058eeda0faa9de530b766cab4",
+    "tools/assets/export-assets.ts": "96a823a38ef5b533ee724a6e4125f3b5b31dc4bc14b0fb06055e6ea7e2be5a76"
+  },
+  "assets": [
+    {
+      "path": "public/assets/world/harbor-works.glb",
+      "sha256": "d5351b0d2473c727ec868f4a521f8a8f94b4ba66411f4b3216d351727cc7cb3d",
+      "bytes": 988132
+    },
+    {
+      "path": "public/assets/world/hw-01-built.json",
+      "sha256": "345df635b5c154937792950e05e80f7a672b591ab4a4cd09fa562764ab1d7a29",
+      "bytes": 521417
+    },
+    {
+      "path": "public/assets/materials/harbor-asphalt.png",
+      "sha256": "14a0d86b7aeeae9f17a377ae063eddc9fe353cb835aafd5e170345b82ed410c3",
+      "bytes": 52754
+    },
+    {
+      "path": "public/assets/materials/harbor-concrete.png",
+      "sha256": "3278e41c214f7c575f375c7fd668d86c749ae4d01fa7d85b9434651a3f17e1db",
+      "bytes": 53728
+    },
+    {
+      "path": "public/assets/materials/harbor-curb.png",
+      "sha256": "f0260cdebaeb4487771648dc27ad1144f0e01e6a4b87a130cfb490db544a4742",
+      "bytes": 90328
+    },
+    {
+      "path": "public/assets/materials/harbor-steel.png",
+      "sha256": "4e9d115c541e4c3a0548c1bbf737148ff0cf611a9925600ca1e2a6bce618b309",
+      "bytes": 31999
+    },
+    {
+      "path": "public/assets/materials/harbor-shed-paint.png",
+      "sha256": "6c01163b9c13657176075d6aa6002c6f2650ab11ef152078119ffa47d0949bd7",
+      "bytes": 21069
+    },
+    {
+      "path": "public/assets/cars/challenger.glb",
+      "sha256": "5bf0e967121c62a7e4e53f3eb7dd05c6c27815b9208fe8e51e3faf8c1a5ccfea",
+      "bytes": 2535248
+    },
+    {
+      "path": "public/assets/cars/cybertruck.glb",
+      "sha256": "3bdccd12bacfa08e34a31d6797cde43f0d1df35ebef4cbc46f2bd9c49fd07929",
+      "bytes": 1027000
+    },
+    {
+      "path": "public/assets/cars/mclaren-f1.glb",
+      "sha256": "22904bddd1bbaafe3ba1c6b4dd0bb81110e3de79abbe8fb287d939bd9aa6623c",
+      "bytes": 3743268
+    },
+    {
+      "path": "public/assets/cars/lancia-delta.glb",
+      "sha256": "eddff32ddc862b1223a20b4a311e78974bdbedb01646d99a61ca6afbfbcac807",
+      "bytes": 1744080
+    },
+    {
+      "path": "public/assets/cars/agera.glb",
+      "sha256": "f73659d8d0dca8b8c1ee3bc992c8e773380b7d01f12bd3987658e689ac1780d4",
+      "bytes": 1069140
+    }
+  ]
+}

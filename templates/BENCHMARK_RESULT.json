@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "NOT_RUN",
+  "requirement_ids": [
+    "PER-01"
+  ],
+  "commit": null,
+  "recorded_at": null,
+  "device": {
+    "model": null,
+    "cpu": null,
+    "gpu": null,
+    "ram_bytes": null,
+    "os_version": null,
+    "browser": null,
+    "browser_version": null,
+    "power_state": null
+  },
+  "build": {
+    "target": null,
+    "artifact_sha256": null,
+    "profiling_enabled": null
+  },
+  "test": {
+    "quality_preset": null,
+    "render_width_px": null,
+    "render_height_px": null,
+    "dynamic_resolution": false,
+    "route": null,
+    "car_id": null,
+    "warmup_seconds": 30,
+    "run_seconds": 180,
+    "requested_runs": 3
+  },
+  "runs": [],
+  "summary": {
+    "average_fps": null,
+    "p95_frame_interval_ms": null,
+    "p99_frame_interval_ms": null,
+    "game_caused_freezes_over_100ms": null,
+    "gpu_timer_method": null,
+    "resident_memory_method": null
+  },
+  "raw_artifact_paths": [],
+  "reviewer": null,
+  "limitations": [
+    "Template only; no game benchmark has been run."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "lateral-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LATERAL self-hosted game server (one process, ws + node:sqlite)",
+  "engines": { "node": ">=24" },
+  "dependencies": { "ws": "8.22.0" },
+  "devDependencies": { "@types/ws": "8.18.1" }
+}

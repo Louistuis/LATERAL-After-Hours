@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:lateral:vehicle-config:1",
+  "title": "LATERAL vehicle tuning seed schema",
+  "description": "SI units unless named rpm. Structural validation is not handling validation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "carId",
+    "tuningStatus",
+    "massKg",
+    "wheelbaseM",
+    "trackM",
+    "centerOfMassM",
+    "wheelRadiusM",
+    "drive",
+    "engine",
+    "suspension",
+    "tires",
+    "steering",
+    "assists"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "carId": {
+      "enum": [
+        "CAR-01",
+        "CAR-02",
+        "CAR-04",
+        "CAR-05",
+        "CAR-06"
+      ]
+    },
+    "tuningStatus": {
+      "enum": [
+        "UNVALIDATED_SEED",
+        "IN_TUNING",
+        "REVIEWED"
+      ]
+    },
+    "massKg": {
+      "type": "number",
+      "minimum": 900,
+      "maximum": 2000
+    },
+    "wheelbaseM": {
+      "type": "number",
+      "minimum": 2,
+      "maximum": 3.3
+    },
+    "trackM": {
+      "type": "number",
+      "minimum": 1.3,
+      "maximum": 2
+    },
+    "centerOfMassM": {
+      "$ref": "#/$defs/vec3"
+    },
+    "wheelRadiusM": {
+      "type": "number",
+      "minimum": 0.2,
+      "maximum": 0.5
+    },
+    "drive": {
+      "const": "RWD"
+    },
+    "engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "idleRpm",
+        "redlineRpm",
+        "torqueCurve",
+        "gearRatios",
+        "finalDrive",
+        "shiftSeconds"
+      ],
+      "properties": {
+        "idleRpm": {
+          "type": "number",
+          "minimum": 500,
+          "maximum": 1800
+        },
+        "redlineRpm": {
+          "type": "number",
+          "minimum": 4000,
+          "maximum": 10000
+        },
+        "torqueCurve": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "rpm",
+              "torqueNm"
+            ],
+            "properties": {
+              "rpm": {
+                "type": "number",
+                "minimum": 0
+              },
+              "torqueNm": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1200
+              }
+            }
+          }
+        },
+        "gearRatios": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 8,
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "finalDrive": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 6
+        },
+        "shiftSeconds": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 0.8
+        }
+      }
+    },
+    "suspension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "restLengthM",
+        "travelM",
+        "springNPerM",
+        "damperNsPerM",
+        "maxForceN"
+      ],
+      "properties": {
+        "restLengthM": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 0.6
+        },
+        "travelM": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 0.4
+        },
+        "springNPerM": {
+          "type": "number",
+          "minimum": 5000,
+          "maximum": 150000
+        },
+        "damperNsPerM": {
+          "type": "number",
+          "minimum": 100,
+          "maximum": 15000
+        },
+        "maxForceN": {
+          "type": "number",
+          "minimum": 1000,
+          "maximum": 80000
+        }
+      }
+    },
+    "tires": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frontMu",
+        "rearMu",
+        "peakSlipAngleRad",
+        "postPeakGripFactor",
+        "lowSpeedRegularizationMS"
+      ],
+      "properties": {
+        "frontMu": {
+          "type": "number",
+          "minimum": 0.3,
+          "maximum": 2
+        },
+        "rearMu": {
+          "type": "number",
+          "minimum": 0.3,
+          "maximum": 2
+        },
+        "peakSlipAngleRad": {
+          "type": "number",
+          "minimum": 0.03,
+          "maximum": 0.5
+        },
+        "postPeakGripFactor": {
+          "type": "number",
+          "minimum": 0.2,
+          "maximum": 1
+        },
+        "lowSpeedRegularizationMS": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 3
+        }
+      }
+    },
+    "steering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maxAngleLowSpeedRad",
+        "maxAngleHighSpeedRad",
+        "highSpeedMS",
+        "responseSeconds"
+      ],
+      "properties": {
+        "maxAngleLowSpeedRad": {
+          "type": "number",
+          "minimum": 0.2,
+          "maximum": 1.2
+        },
+        "maxAngleHighSpeedRad": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 0.8
+        },
+        "highSpeedMS": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 80
+        },
+        "responseSeconds": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 0.8
+        }
+      }
+    },
+    "assists": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "countersteerStrength",
+        "stabilityStrength"
+      ],
+      "properties": {
+        "countersteerStrength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "stabilityStrength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "vec3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "z"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "z": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

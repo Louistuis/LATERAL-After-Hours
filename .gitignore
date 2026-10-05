@@ -1,0 +1,9 @@
+node_modules/
+dist/
+release-handoff/
+*.zip
+test-results/
+playwright-report/
+__pycache__/
+.DS_Store
+.release-check/

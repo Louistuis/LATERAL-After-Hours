@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "build_id": null,
+  "profile": null,
+  "car": null,
+  "route": null,
+  "event": null,
+  "issue_title": "",
+  "reproduction_steps": [],
+  "expected": "",
+  "observed": "",
+  "severity_suggestion": null,
+  "attachment_paths": [],
+  "overall_feedback": {
+    "driving": "",
+    "graphics": "",
+    "smoothness": "",
+    "controls": "",
+    "audio": "",
+    "content": "",
+    "requested_changes": ""
+  },
+  "automatic_upload": false
+}

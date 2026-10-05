@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "carId": "CAR-01",
+  "tuningStatus": "UNVALIDATED_SEED",
+  "massKg": 1160,
+  "wheelbaseM": 2.48,
+  "trackM": 1.55,
+  "centerOfMassM": {
+    "x": 0,
+    "y": -0.22,
+    "z": 0
+  },
+  "wheelRadiusM": 0.31,
+  "drive": "RWD",
+  "engine": {
+    "idleRpm": 850,
+    "redlineRpm": 7400,
+    "torqueCurve": [
+      {
+        "rpm": 850,
+        "torqueNm": 130
+      },
+      {
+        "rpm": 2500,
+        "torqueNm": 240
+      },
+      {
+        "rpm": 4500,
+        "torqueNm": 285
+      },
+      {
+        "rpm": 6500,
+        "torqueNm": 264
+      },
+      {
+        "rpm": 7400,
+        "torqueNm": 215
+      }
+    ],
+    "gearRatios": [
+      3.5,
+      2.15,
+      1.53,
+      1.18,
+      0.95,
+      0.8
+    ],
+    "finalDrive": 4.1,
+    "shiftSeconds": 0.18
+  },
+  "suspension": {
+    "restLengthM": 0.32,
+    "travelM": 0.18,
+    "springNPerM": 32000,
+    "damperNsPerM": 3400,
+    "maxForceN": 18000
+  },
+  "tires": {
+    "frontMu": 1.13,
+    "rearMu": 1.05,
+    "peakSlipAngleRad": 0.14,
+    "postPeakGripFactor": 0.74,
+    "lowSpeedRegularizationMS": 0.5
+  },
+  "steering": {
+    "maxAngleLowSpeedRad": 0.82,
+    "maxAngleHighSpeedRad": 0.3,
+    "highSpeedMS": 35,
+    "responseSeconds": 0.12
+  },
+  "assists": {
+    "countersteerStrength": 0.18,
+    "stabilityStrength": 0.08
+  }
+}

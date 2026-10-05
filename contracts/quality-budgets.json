@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "status": "PROPOSED_TARGETS_NOT_MEASURED",
+  "byte_conventions": {
+    "MB": 1000000,
+    "MiB": 1048576,
+    "KiB": 1024
+  },
+  "simulation": {
+    "fixed_hz": 60,
+    "max_catchup_steps_per_frame": 5,
+    "pause_when_hidden": true
+  },
+  "frame_classes": {
+    "60fps": {
+      "average_fps_min": 58,
+      "frame_interval_p95_ms_max": 18.5,
+      "frame_interval_p99_ms_max": 33.4
+    },
+    "30fps": {
+      "average_fps_min": 29,
+      "frame_interval_p95_ms_max": 36,
+      "frame_interval_p99_ms_max": 66.7
+    }
+  },
+  "benchmark_protocol": {
+    "warmup_seconds": 30,
+    "runs": 3,
+    "run_seconds": 180,
+    "dynamic_resolution_during_fixed_tier_test": false,
+    "game_caused_freeze_ms_investigation_threshold": 100,
+    "mobile_sustained_seconds": 600,
+    "desktop_soak_seconds": 1800,
+    "scene_swap_cycles": 20
+  },
+  "loading": {
+    "initial_playable_transfer_bytes_max": 8000000,
+    "full_submission_bytes_max": 120000000,
+    "full_submission_file_count_max": 800,
+    "cold_trials_per_profile": 10,
+    "profiles": [
+      {
+        "download_mbps": 20,
+        "rtt_ms": 100,
+        "p95_first_playable_seconds_max": 10
+      },
+      {
+        "download_mbps": 5,
+        "rtt_ms": 150,
+        "p95_first_playable_seconds_max": 20
+      }
+    ]
+  },
+  "tiers": {
+    "low": {
+      "draw_calls_all_passes_max": 150,
+      "triangles_main_visible_max": 120000,
+      "player_car_triangles_max": 15000,
+      "estimated_gpu_residency_bytes_max": 167772160,
+      "smoke_particles_max": 100,
+      "shadow_map_side_px": 1024
+    },
+    "balanced": {
+      "draw_calls_all_passes_max": 250,
+      "triangles_main_visible_max": 300000,
+      "player_car_triangles_max": 35000,
+      "estimated_gpu_residency_bytes_max": 268435456,
+      "smoke_particles_max": 300,
+      "shadow_map_side_px": 2048
+    },
+    "high": {
+      "draw_calls_all_passes_max": 400,
+      "triangles_main_visible_max": 650000,
+      "player_car_triangles_max": 65000,
+      "estimated_gpu_residency_bytes_max": 402653184,
+      "smoke_particles_max": 600,
+      "shadow_map_side_px": 2048
+    }
+  },
+  "storage": {
+    "save_utf8_bytes_max": 524288,
+    "evict_ghosts_before_progression": true
+  },
+  "ghosts": {
+    "sample_hz": 15,
+    "maximum_saved_best_per_route": 1
+  },
+  "replay": {
+    "ring_seconds": 12,
+    "sample_hz": 30
+  },
+  "notes": [
+    "Internal targets, not platform minimums or observed performance.",
+    "GPU residency is an estimate with method stated; renderer counters are not VRAM measurements.",
+    "Do not double-count JS heap and WASM memory.",
+    "Pin exact hardware/browser/OS at G0; test release builds and genuine portal previews."
+  ]
+}

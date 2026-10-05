@@ -1,0 +1,50 @@
+@font-face { font-family: "Big Shoulders Display"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("/assets/fonts/big-shoulders-display-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "Big Shoulders Stencil Display"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("/assets/fonts/big-shoulders-stencil-display-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "Chakra Petch"; font-style: normal; font-weight: 500; font-display: swap; src: url("/assets/fonts/chakra-petch-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Chakra Petch"; font-style: normal; font-weight: 600; font-display: swap; src: url("/assets/fonts/chakra-petch-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Chakra Petch"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/chakra-petch-latin-700-normal.woff2") format("woff2"); }
+:root { color-scheme: dark; --boot-hazard: repeating-linear-gradient(-45deg, #ff8a1f 0 7px, #0a0f10 7px 14px); font-family: "Chakra Petch", ui-monospace, "SF Mono", "Avenir Next Condensed", -apple-system, BlinkMacSystemFont, "Helvetica Neue", system-ui, sans-serif; color: #f4f7f1; background: #050b0d; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+html, body, #app { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+html, body { overscroll-behavior: none; touch-action: manipulation; -webkit-text-size-adjust: 100%; }
+#app { position: fixed; top: 0; left: 0; height: var(--lateral-viewport-height, 100dvh); }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #d8fa72; outline-offset: 3px; }
+canvas:focus-visible { outline: 1px solid rgba(216, 250, 114, .4); }
+.lateral-app { position: relative; isolation: isolate; }
+.lateral-viewport { position: absolute; inset: 0; display: block; width: 100%; height: 100%; touch-action: none; outline-offset: -4px !important; }
+.lateral-controls, .lateral-overlay { position: absolute; inset: 0; pointer-events: none; }
+.lateral-controls { z-index: 2; }
+.lateral-overlay { z-index: 3; }
+.lateral-controls > *, .lateral-overlay > * { pointer-events: auto; }
+.lateral-boot { position: absolute; inset: 0; z-index: 20; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(28px, 9vw, 160px); overflow: hidden; background: radial-gradient(ellipse 70% 60% at 88% 92%, rgba(255, 138, 31, .16) 0%, transparent 62%), radial-gradient(ellipse 60% 55% at 8% 0%, rgba(47, 184, 173, .32) 0%, transparent 70%), #050b0d; }
+.lateral-boot::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(130, 205, 196, .07) 1px, transparent 1px) 0 0 / 64px 64px, linear-gradient(90deg, rgba(130, 205, 196, .07) 1px, transparent 1px) 0 0 / 64px 64px; -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000, transparent); mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000, transparent); pointer-events: none; }
+.lateral-boot > * { position: relative; }
+.lateral-boot[hidden] { display: none; }
+.lateral-boot > .boot-band { position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--boot-hazard); opacity: .92; }
+.boot-mark { display: block; width: 4.6rem; height: 4.6rem; color: #d8fa72; filter: drop-shadow(0 0 18px rgba(216, 250, 114, .4)); animation: boot-rise .6s cubic-bezier(.2, .8, .2, 1) both; }
+.boot-mark svg { display: block; width: 100%; height: 100%; }
+.lateral-boot > .boot-eyebrow, .lateral-boot > h1, .lateral-boot > .boot-message { animation: boot-rise .7s cubic-bezier(.2, .8, .2, 1) both; }
+.lateral-boot > h1 { animation-delay: .08s; }
+.lateral-boot > .boot-message { animation-delay: .16s; }
+@keyframes boot-rise { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
+.boot-eyebrow { display: flex; align-items: center; gap: .9em; margin: 30px 0 14px; color: #ff8a1f; letter-spacing: .42em; font-size: .78rem; font-weight: 700; text-transform: uppercase; }
+.boot-eyebrow::before { content: ""; width: 2.6em; height: 7px; background: var(--boot-hazard); }
+.lateral-boot h1 { margin: 0; font-family: "Big Shoulders Stencil Display", "Big Shoulders Display", "Avenir Next Condensed", "Arial Narrow", system-ui, sans-serif; font-size: clamp(3.4rem, 9.4vw, 8.4rem); line-height: .86; font-weight: 800; font-style: italic; letter-spacing: .015em; text-transform: uppercase; text-wrap: balance; color: #f4f7f1; }
+.boot-message { max-width: 42rem; margin: 1.3rem 0 0; color: #b7c5bf; font-size: 1rem; line-height: 1.6; letter-spacing: .04em; }
+.lateral-boot:not([role])::after { content: ""; position: absolute; left: clamp(28px, 9vw, 160px); bottom: clamp(28px, 7vh, 72px); width: min(280px, 60vw); height: 10px; background: var(--boot-hazard) 0 0 / 28px 28px; clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); animation: boot-hazard .7s linear infinite; }
+.boot-retry { border: 0; margin-top: 20px; padding: 15px 30px; background: #d8fa72; color: #0d1505; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); transition: transform .15s ease, background .15s ease; }
+.boot-retry:hover { background: #ecffab; transform: translateX(3px); }
+.boot-retry:focus-visible { outline: 2px solid #0d1505; outline-offset: -5px; }
+.boot-recovery-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.boot-recovery-actions button { border: 1px solid rgba(130, 205, 196, .45); padding: 14px 22px; background: rgba(47, 184, 173, .1); color: #f4f7f1; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: .86rem; clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px)); transition: background .15s ease, border-color .15s ease, color .15s ease; }
+.boot-recovery-actions button:hover:not(:disabled) { background: rgba(216, 250, 114, .12); border-color: #d8fa72; color: #d8fa72; }
+.boot-recovery-actions button:focus-visible { outline: 2px solid #d8fa72; outline-offset: -5px; }
+.boot-recovery-actions button:disabled { opacity: .6; cursor: wait; }
+.boot-recovery-feedback { max-width: 42rem; font-size: .9rem; color: #d8fa72; }
+.boot-recovery-feedback:empty { display: none; }
+@keyframes boot-hazard { from { background-position: 0 0; } to { background-position: 28px 0; } }
+@media (prefers-reduced-motion: reduce) { .lateral-boot::after, .lateral-boot > *, .boot-mark { animation: none !important; } }
+@media (max-height: 460px) { .lateral-boot { padding: 20px 28px; overflow-y: auto; justify-content: flex-start; } .boot-mark { display: none; } .boot-eyebrow { margin-top: 0; } .lateral-boot h1 { font-size: 2.6rem; } .boot-message { line-height: 1.35; } .lateral-boot:not([role])::after { display: none; } }
+html:not([data-lateral-screen=drive]) .lateral-touch-controls { display: none !important; }
